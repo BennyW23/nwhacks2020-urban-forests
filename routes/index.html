@@ -63,17 +63,16 @@
               <p>Enter image scale here (i.e. 1m = X pixels): 
                 <input id="imageScaleInput" min="0" required="required"
                   value="meters per pixel" name="meters per pixel" type="number">
-                  <div id="imageScaleTest"></div> 
                 <button onclick="submitImages()">Submit</button>
               </p>
             </li>
             </form>
             <li>
               <div id="Results">
-                <p style="text-align: left;">Area Identified: </p>
+                <p style="text-align: left;">Area Identified: <div id="totalArea"></div></p>
                 <p style="text-align: left;">Estimated Carbon Sequestration
-                  Potential: </p>
-                <p style="text-align: left;">Estimated Cost of Conversion: </p>
+                  Potential: <div id="totalCarbon"></div></p>
+                <p style="text-align: left;">Estimated Cost of Conversion: <div id="totalCost"></div></p>
               </div>
             </li>
           </ol>

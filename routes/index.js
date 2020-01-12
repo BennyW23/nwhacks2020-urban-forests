@@ -23,7 +23,8 @@ async function main() {
   let { stdout4} = await sh("source './google-cloud-sdk/completion.bash.inc'");
   let { stdout5} = await sh('export PATH="./google-cloud-sdk/bin:$PATH"');
   let { stdout6} = await sh("source './google-cloud-sdk/path.bash.inc'");
-  let { stdout } = await sh('export GOOGLE_APPLICATION_CREDENTIALS=./urbanforests-key.json\ncurl -X POST -H "Content-Type: application/json"   -H "Authorization: Bearer $(gcloud auth application-default print-access-token)"   https://automl.googleapis.com/v1beta1/projects/747099202913/locations/us-central1/models/IOD6694191827760709632:predict   -d @./public/request.json');
+  let { stdout7 } = await sh('export GOOGLE_APPLICATION_CREDENTIALS=./urbanforests-key.json');
+  let { stdout } = await sh('curl -X POST -H "Content-Type: application/json"   -H "Authorization: Bearer $(gcloud auth application-default print-access-token)"   https://automl.googleapis.com/v1beta1/projects/747099202913/locations/us-central1/models/IOD6694191827760709632:predict   -d @./public/request.json');
   //let { stdout } = await sh('wc ./urbanforests-key.json');
   //let { stdout } = await sh('gcloud --version');
   //for (let line of stdout.split('\n')) {
@@ -46,6 +47,10 @@ router.get('/analyze-image', function(req, res, next) {
     res.send(result);
   })
   .catch(err => console.log(err))
+});
+
+router.get('test-ajax', function(req, res, next) {
+  res.sendFile(path.join(__dirname + "/nice.html"));
 });
 
 module.exports = router;
