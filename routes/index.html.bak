@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+	Linear by TEMPLATED    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Linear by TEMPLATED</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900"
+
+      rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script> <noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css">
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/style-desktop.css">
+		</noscript>
+  </head>
+  <body class="homepage">
+    <!-- Header -->
+    <div id="header"><br>
+      <div class="container">
+        <!-- Logo -->
+        <div id="logo">
+          <h1><a href="#">urbanForests</a></h1>
+          <span class="tag">By nwHacks Team: bigTrunkus (Benny Wong, Hnat
+            Cheung, &amp; Edward Le)</span> </div>
+      </div>
+    </div>
+    <!-- Featured -->
+    <div id="featured">
+      <div class="container">
+        <header>
+          <h2>Welcome to urbanForests</h2>
+        </header>
+        <p>This webapp analyzes aerial satellite imagery and determines the
+          potential carbon sequestration and costs from converting conventional
+          building roofs to greenroofs.</p>
+        <div id="listOfSteps">
+          <ol>
+            <li style="text-align: left;">
+              <p>Upload Aerial Satellite Imagery here: <input accept=".jpg, .png"
+
+                  multiple="multiple" required="required" value="Upload Satelite Imagery Here (.jpg, .png)"
+
+                  name="Upload Satelite Imagery Here (.jpg, .png)" type="file">
+              </p>
+            </li>
+            <li style="text-align: left;">
+              <p>Enter image scale here (i.e. 1m = X pixels): <input min="0" required="required"
+
+                  value="meters per pixel" name="meters per pixel" type="number"></p>
+            </li>
+            <li>
+              <div id="Results">
+                <p style="text-align: left;">Area Identified: </p>
+                <p style="text-align: left;">Estimated Carbon Sequestration
+                  Potential: </p>
+                <p style="text-align: left;">Estimated Cost of Conversion:
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <hr>
+        <header>
+          <h2>Benefits of Green Roofs to Cities</h2>
+        </header>
+        <div class="row">
+          <section class="4u"> <span class="pennant"><span class="fa fa-briefcase"></span></span>
+            <h3>Maecenas luctus lectus</h3>
+            <p>Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur
+              sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed
+              ac leo.</p>
+          </section>
+          <section class="4u"> <span class="pennant"><span class="fa fa-lock"></span></span>
+            <h3>Maecenas luctus lectus</h3>
+            <p>Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo,
+              vulputate sed, convallis at, ultricies quis, justo. Donec magna.</p>
+          </section>
+          <section class="4u"> <span class="pennant"><span class="fa fa-globe"></span></span>
+            <h3>Maecenas luctus lectus</h3>
+            <p>Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur
+              sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed
+              ac leo.</p>
+          </section>
+        </div>
+        <br>
+        <p>Source: <a target="_blank" href="https://council.vancouver.ca/20180725/documents/pspc15.pdf">City
+            of Vancouver (2018)</a></p>
+      </div>
+    </div>
+    <!-- Main -->
+    <div id="main">
+      <div id="content">
+        <section> <br>
+          <header>
+            <h2>&lt;Meme goes here&gt;</h2>
+          </header>
+          <p>&lt;Description goes here&gt;</p>
+        </section>
+        <br>
+      </div>
+    </div>
+    <!-- Tweet -->
+    <div id="tweet">
+      <div class="container">
+        <section>
+          <blockquote>&lt;Placeholder text&gt;</blockquote>
+        </section>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container">
+        <section>
+          <header>
+            <h2>Thank you!</h2>
+            <span class="byline"> </span><br>
+          </header>
+        </section>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div id="copyright">
+      <div class="container"> Design: <a href="http://templated.co">TEMPLATED</a>
+        Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+      </div>
+    </div>
+  </body>
+</html>

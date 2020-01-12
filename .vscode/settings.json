@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/72c229cb-abf0-489d-99b0-230d48449d70/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/urbanforests",
+    "appService.deploySubpath": ""
+}
