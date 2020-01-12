@@ -12,6 +12,7 @@
 
       rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
     <script src="js/init.js"></script> <noscript>
@@ -49,19 +50,24 @@
           building roofs to greenroofs.</p>
         <div id="listOfSteps">
           <ol>
+            <form action="/submitimages"></form>
             <li style="text-align: left;">
-              <p>Upload Aerial Satellite Imagery here: <input accept=".jpg, .png"
-
-                  multiple="multiple" required="required" value="Upload Satelite Imagery Here (.jpg, .png)"
-
-                  name="Upload Satelite Imagery Here (.jpg, .png)" type="file">
+              <p>Upload Aerial Satellite Imagery here: 
+                  <input id="imageInput" accept=".jpg, .png"
+                    multiple="multiple" required="required" value="Upload Satelite Imagery Here (.jpg, .png)"
+                    name="Upload Satelite Imagery Here (.jpg, .png)" type="file" onchange="encodeImageFileAsURL(this)" />
+              </p>
+              <div id="imageTest"></div>
+            </li>
+            <li style="text-align: left;">
+              <p>Enter image scale here (i.e. 1m = X pixels): 
+                <input id="imageScaleInput" min="0" required="required"
+                  value="meters per pixel" name="meters per pixel" type="number">
+                  <div id="imageScaleTest"></div> 
+                <button onclick="submitImages()">Submit</button>
               </p>
             </li>
-            <li style="text-align: left;">
-              <p>Enter image scale here (i.e. 1m = X pixels): <input min="0" required="required"
-
-                  value="meters per pixel" name="meters per pixel" type="number"></p>
-            </li>
+            </form>
             <li>
               <div id="Results">
                 <p style="text-align: left;">Area Identified: </p>
