@@ -3,11 +3,11 @@
 	Linear by TEMPLATED    templated.co @templatedco    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
 <html>
   <head>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>urbanForests | Home</title>
     <meta name="description" content="urbanForests Homepage">
     <meta name="keywords" content="">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900"
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900"
       rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/ajax.js"></script>
@@ -82,29 +82,34 @@ ol.c {
         <div id="listOfSteps" ,="" class="ol.c">
           <ol>
             <li style="text-align: left;">
-              <h3 id="step1">Upload Aerial Satellite Imagery here: 
-                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input id="imageInput" accept=".jpg, .png"
-                    multiple="multiple" required="required" value="Upload Satelite Imagery Here (.jpg, .png)"
-                    name="Upload Satelite Imagery Here (.jpg, .png)" type="file" onchange="encodeImageFileAsURL(this)" />
-              </h3>
+              <h3 id="step1">Upload Aerial Satellite Imagery here: &nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input id="imageInput"
+                  accept=".jpg, .png" multiple="multiple" required="required" value="Upload Satelite Imagery Here (.jpg, .png)"
+                  name="Upload Satelite Imagery Here (.jpg, .png)" onchange="encodeImageFileAsURL(this)"
+                  type="file"> </h3>
               <div id="imageTest"></div>
             </li>
             <li style="text-align: left;">
-              <h3 id="step2">Enter image scale here (i.e. 1m = X pixels): &nbsp;&nbsp; 
-                <input id="imageScaleInput" min="0" required="required"
+              <h3 id="step2">Enter image scale here (i.e. 1m = X pixels):
+                &nbsp;&nbsp; <input id="imageScaleInput" min="0" required="required"
                   value="meters per pixel" name="meters per pixel" type="number">
-                <button onclick="submitImages()">Submit</button>
-              </h3>
+                <button onclick="submitImages()">Submit</button> </h3>
             </li>
             <li>
               <div style="text-align: left;">
                 <h3 id="resultsStep">3.) Results: </h3>
               </div>
               <div id="Results">
-                <p style="text-align: left;">- Area Identified: <div id="totalArea"></div></p>
+                <p style="text-align: left;">- Area Identified: </p>
+                <div id="totalArea"></div>
+                <p></p>
                 <p style="text-align: left;">- Estimated Carbon Sequestration
-                  Potential: <div id="totalCarbon"></div></p>
-                <p style="text-align: left;">- Estimated Cost of Conversion: <div id="totalCost"></div></p>
+                  Potential: </p>
+                <div id="totalCarbon"></div>
+                <p></p>
+                <p style="text-align: left;">- Estimated Cost of Conversion: </p>
+                <div id="totalCost"></div>
+                <p></p>
               </div>
             </li>
           </ol>
@@ -114,20 +119,20 @@ ol.c {
           <h2>Benefits of Green Roofs to Cities</h2>
         </header>
         <div class="row">
-          <section class="4u"> <span class="pennant"><img title="heating/cooling"
+          <section class="4u"> <span class="pennant"><img title="heating/cooling"
                 alt="heating/cooling" src="images/pollution1.png"></span>
             <h3>1.) Direct Greenhouse Gas (GHG) Reductions</h3>
             <p>Plants can sequester greenhouse gas emissions from rooftop
               gardens</p>
           </section>
-          <section class="4u"> <span class="pennant"><img title="heating/cooling"
+          <section class="4u"> <span class="pennant"><img title="heating/cooling"
                 alt="heating/cooling" src="images/heating-cooling2.png"></span>
             <h3>2.) Green Roofs Reduce Heating/Cooling GHGs</h3>
             <p>Heating and Cooling can account for 50% of a city's greenhouse
               gas emissions. Green roofs reduce this need by providing effective
               insulation.</p>
           </section>
-          <section class="4u"> <span class="pennant"><img title="heating/cooling"
+          <section class="4u"> <span class="pennant"><img title="heating/cooling"
                 alt="heating/cooling" src="images/urban%20agriculture1.png"></span>
             <h3>3.) Green Roofs Support Biodiversity and Urban Agriculture</h3>
             <p>Urban wildlife can take shelter on green roofs while providing
@@ -151,37 +156,79 @@ ol.c {
             <h2>References:</h2>
           </header>
           <p style="text-align: justify;"><b style="font-weight:normal;" id="docs-internal-guid-d5ffa132-7fff-9a01-7bd0-1d051d86ebb0">
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
-                  of Toronto, 2005: </span><a href="https://web.toronto.ca/wp-content/uploads/2017/08/8f39-Report-on-the-Environmental-Benefits-and-Costs-of-Green-Roof-Technology-for-the-City-of-Toronto-Full-Report.pdf"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://web.toronto.ca/wp-content/uploads/2017/08/8f39-Report-on-the-Environmental-Benefits-and-Costs-of-Green-Roof-Technology-for-the-City-of-Toronto-Full-Report.pdf</span></a></p>
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
-                  of Toronto, 2018: </span><a href="http://map.toronto.ca/maps/map.jsp?app=TorontoMaps_v2"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">http://map.toronto.ca/maps/map.jsp?app=TorontoMaps_v2</span></a></p>
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
-                  of Vancouver, 2018a: </span><a href="https://council.vancouver.ca/20180725/documents/pspc15.pdf"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://council.vancouver.ca/20180725/documents/pspc15.pdf</span></a></p>
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
-                  of Vancouver, 2018b: </span><a href="https://maps.vancouver.ca/"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://maps.vancouver.ca/</span></a></p>
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">IPCC,
-                  2018: </span><a href="https://www.ipcc.ch/sr15/" style="text-decoration:none;"><span
-                    style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.ipcc.ch/sr15/</span></a></p>
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">MacDonald
-                  et al., 2016: </span><a href="https://dalspace.library.dal.ca/bitstream/handle/10222/76724/Green%20Roof%20Carbon%20Sequestration%20Potential%20of%20Dalhousies%20Halifax%20Campus.pdf?sequence=1&amp;isAllowed=y"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://dalspace.library.dal.ca/bitstream/handle/10222/76724/Green%20Roof%20Carbon%20Sequestration%20Potential%20of%20Dalhousies%20Halifax%20Campus.pdf?sequence=1&amp;isAllowed=y</span></a></p>
-            </b><b style="font-weight:normal;" id="docs-internal-guid-d5ffa132-7fff-9a01-7bd0-1d051d86ebb0">
-              <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
-                  style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Seto,
-                  Güneralp, and Hutyra (2012): </span><a href="https://www.pnas.org/content/109/40/16083.short"
-                  style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.pnas.org/content/109/40/16083.short</span></a></p>
-            </b><br class="Apple-interchange-newline">
-          </p>
+            </b></p>
+          <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><b
+              style="font-weight:normal;" id="docs-internal-guid-d5ffa132-7fff-9a01-7bd0-1d051d86ebb0"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
+                  of Toronto, 2005: </span><a href="https://web.toronto.ca/wp-content/uploads/2017/08/8f39-Report-on-the-Environmental-Benefits-and-Costs-of-Green-Roof-Technology-for-the-City-of-Toronto-Full-Report.pdf"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://web.toronto.ca/wp-content/uploads/2017/08/8f39-Report-on-the-Environmental-Benefits-and-Costs-of-Green-Roof-Technology-for-the-City-of-Toronto-Full-Report.pdf</span></a></b></p>
+          <b style="font-weight:normal;" id="docs-internal-guid-d5ffa132-7fff-9a01-7bd0-1d051d86ebb0">
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
+                  of Toronto, 2018: </span><a href="http://map.toronto.ca/maps/map.jsp?app=TorontoMaps_v2"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">http://map.toronto.ca/maps/map.jsp?app=TorontoMaps_v2</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
+                  of Vancouver, 2018a: </span><a href="https://council.vancouver.ca/20180725/documents/pspc15.pdf"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://council.vancouver.ca/20180725/documents/pspc15.pdf</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City
+                  of Vancouver, 2018b: </span><a href="https://maps.vancouver.ca/"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://maps.vancouver.ca/</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">IPCC,
+                  2018: </span><a href="https://www.ipcc.ch/sr15/" style="text-decoration:none;"><span
+style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.ipcc.ch/sr15/</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">MacDonald
+                  et al., 2016: </span><a href="https://dalspace.library.dal.ca/bitstream/handle/10222/76724/Green%20Roof%20Carbon%20Sequestration%20Potential%20of%20Dalhousies%20Halifax%20Campus.pdf?sequence=1&amp;isAllowed=y"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://dalspace.library.dal.ca/bitstream/handle/10222/76724/Green%20Roof%20Carbon%20Sequestration%20Potential%20of%20Dalhousies%20Halifax%20Campus.pdf?sequence=1&amp;isAllowed=y</span></a></p>
+          </b><b style="font-weight:normal;" id="docs-internal-guid-d5ffa132-7fff-9a01-7bd0-1d051d86ebb0">
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Seto,
+                  Güneralp, and Hutyra (2012): </span><a href="https://www.pnas.org/content/109/40/16083.short"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.pnas.org/content/109/40/16083.short</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><a
+                href="https://www.pnas.org/content/109/40/16083.short" style="text-decoration:none;"><span
+style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"><br></span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><a
+                href="https://www.pnas.org/content/109/40/16083.short" style="text-decoration:none;"><br>
+              </a></p>
+          </b>
+          <h2>Image Credits:</h2>
+          <b style="font-weight:normal;"> </b><b style="font-weight:normal;" id="docs-internal-guid-b33e88d7-7fff-cbf2-de62-56865ee28259">
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Air Conditioning Units: pixabay.net, </span><a
+                href="https://www.needpix.com/photo/378272/services-ac-repair-business-heating-services-cooling-services-air-purification-air-conditioning-repair-air-conditioning"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.needpix.com/photo/378272/services-ac-repair-business-heating-services-cooling-services-air-purification-air-conditioning-repair-air-conditioning</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City Skyline: pixino,&nbsp;</span></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><a
+                href="https://pixnio.com/architecture/city-downtown/city-cityscape-downtown-metropolis-blue-sky-architecture-aerial-urban"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://pixnio.com/architecture/city-downtown/city-cityscape-downtown-metropolis-blue-sky-architecture-aerial-urban</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City of Vancouver from Granville Island: jantiga, </span><a
+                href="https://pixabay.com/photos/city-downtown-vancouver-631445/"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://pixabay.com/photos/city-downtown-vancouver-631445/</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">City of Vancouver from a Mountain: Colin Knowles, </span><a
+                href="https://www.flickr.com/photos/colink/4959132756/" style="text-decoration:none;"><span
+style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.flickr.com/photos/colink/4959132756/</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Green Roof: pxhere, </span><a
+                href="https://pxhere.com/en/photo/965031" style="text-decoration:none;"><span
+style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://pxhere.com/en/photo/965031</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Industrial Pollution: Petr Kratochvil </span><a
+                href="https://www.publicdomainpictures.net/en/view-image.php?image=16891&amp;picture=industrial-pollution"
+                style="text-decoration:none;"><span style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.publicdomainpictures.net/en/view-image.php?image=16891&amp;picture=industrial-pollution</span></a></p>
+            <p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;"><span
+style="font-size:13pt;font-family:Lato,sans-serif;color:#595959;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Rooftop Gardens: pixfuel, </span><a
+                href="https://www.pxfuel.com/en/free-photo-qgqzm" style="text-decoration:none;"><span
+style="font-size:11pt;font-family:Arial;color:#1C3678;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">https://www.pxfuel.com/en/free-photo-qgqzm</span></a></p>
+            <br>
+          </b>
+          <p></p>
         </section>
       </div>
     </div>
