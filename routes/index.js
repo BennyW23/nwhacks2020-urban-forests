@@ -2,6 +2,8 @@ var exec = require('child_process').exec;
 const path = require('path');
 var express = require('express');
 var router = express.Router();
+const fs = require('fs');
+
 
 
 async function sh(cmd) {
@@ -49,8 +51,11 @@ router.get('/analyze-image', function(req, res, next) {
   .catch(err => console.log(err))
 });
 
-router.get('test-ajax', function(req, res, next) {
-  res.sendFile(path.join(__dirname + "/nice.html"));
+router.post('/set-data', function(req, res, next) {
+  const body = req.body;
+  fs.writeFileSync('./public/request.json', JSON.stringify(body), 'utf-8'); 
+  //res.send("1");
+  console.log("sent successfully!");
 });
 
 module.exports = router;

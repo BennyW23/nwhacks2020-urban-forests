@@ -3,6 +3,9 @@ const NO_IMAGE_WARNING_STRING  = "No image given!";
 var width;
 var height;
 var imageScale;
+var imageObject;
+var imageString;
+
 
 function debug_alert(info) {
     //alert(info);
@@ -23,23 +26,47 @@ function encodeImageFileAsURL() {
         newImage.src = srcData; 
         img.src = fileReader.result;
 
-        document.getElementById("imageTest").innerHTML = newImage.outerHTML;
-        imageString = document.getElementById("imageTest").innerHTML
-        imageString = imageString.replace('"<img src="data:image/png;base64,"', '');
-        imageString = imageString.replace('"<img src="data:image/png;base64,"', '');
-        imageString = imageString.slice(0, -1);
+        imageString = document.getElementById("imageInput").innerHTML = newImage.outerHTML;
+        imageString = imageString.replace('<img src="data:image/png;base64,', '');
+        imageString = imageString.replace('<img src="data:image/jpeg;base64,/9j/', '');
+        imageString = imageString.substr(0,imageString.length-2);
+
+        console.log(imageString);
+
         debug_alert("Converted Base64 version is " + imageString);
 
         img.onload = function() {
             width = img.width; // image is loaded; sizes are available
             height = img.height;
         };
+        
+        sendToBackend();
       }
       fileReader.readAsDataURL(fileToLoad);
-      // OVERWRITE /public/request.json
-      
     }
   }
+
+  function sendToBackend() {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Sent successfully to backend");
+            
+        }
+    };
+    
+    imageObject = { "payload": { "image": { "imageBytes": imageString } } };
+    xmlhttp.open("POST","./set-data", true);
+    xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xmlhttp.setRequestHeader('Content-type', 'application/json');
+    xmlhttp.send(JSON.stringify(imageObject));
+}
 
 function submitImages() {
     console.log("Hi from submitImages");
