@@ -1,10 +1,8 @@
-var imageString = null;
-const NO_IMAGE_WARNING_STRING  = "No image given!";
 var width;
 var height;
 var imageScale;
 var imageObject;
-var imageString;
+var isImageInput = false;
 
 
 function debug_alert(info) {
@@ -12,7 +10,18 @@ function debug_alert(info) {
     console.log(info);
 }
 
+function countUtf8Bytes(s){
+    var b = 0, i = 0, c
+    for(;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+    return b
+}
+
+function roundToNDecimalPlaces(value, decimalPlaces) {
+    return Number(Math.round(parseFloat(value + 'e' + decimalPlaces)) + 'e-' + decimalPlaces);
+}
+
 function encodeImageFileAsURL() {
+    debug_alert("encodeImageFileAsURL has begun");
     var filesSelected = document.getElementById("imageInput").files;
     if (filesSelected.length > 0) {
       var fileToLoad = filesSelected[0];
@@ -26,27 +35,22 @@ function encodeImageFileAsURL() {
         newImage.src = srcData; 
         img.src = fileReader.result;
 
-        imageString = document.getElementById("imageInput").innerHTML = newImage.outerHTML;
-        imageString = imageString.replace('<img src="data:image/png;base64,', '');
-        imageString = imageString.replace('<img src="data:image/jpeg;base64,/9j/', '');
-        imageString = imageString.substr(0,imageString.length-2);
-
-        console.log(imageString);
-
-        debug_alert("Converted Base64 version is " + imageString);
+        const base64 = fileReader.result.split(",").pop();
+        debug_alert("Image file uploaded has " + countUtf8Bytes(base64) + " bytes.");
 
         img.onload = function() {
             width = img.width; // image is loaded; sizes are available
             height = img.height;
         };
         
-        sendToBackend();
+        sendToBackend(base64);
       }
       fileReader.readAsDataURL(fileToLoad);
     }
   }
 
-  function sendToBackend() {
+  function sendToBackend(base64String) {
+    debug_alert("sendToBackend has begun");
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -56,21 +60,21 @@ function encodeImageFileAsURL() {
     }
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log("Sent successfully to backend");
-            
+            console.log("sendToBackend: Sent successfully to backend");
+            isImageInput = true;
         }
     };
     
-    imageObject = { "payload": { "image": { "imageBytes": imageString } } };
+    //console.log(base64String);
     xmlhttp.open("POST","./set-data", true);
     xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xmlhttp.setRequestHeader('Content-type', 'application/json');
-    xmlhttp.send(JSON.stringify(imageObject));
+    xmlhttp.setRequestHeader('Content-type', 'text/plain');
+    xmlhttp.send(base64String);
 }
 
 function submitImages() {
-    console.log("Hi from submitImages");
-    if (imageString == null) {
+    debug_alert("submitImages has begun");
+    if (isImageInput == false) {
         debug_alert(NO_IMAGE_WARNING_STRING);
         return;
     }
@@ -79,6 +83,7 @@ function submitImages() {
 }
 
 function analyzeImage() {
+    debug_alert("analyzeImage has begun");
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -98,6 +103,7 @@ function analyzeImage() {
 }
 
 function displayValues(result) {
+    debug_alert("displayValues has begun");
     // calculations
     var carbonConv = 5.87;
     var costConv = 111;
@@ -116,11 +122,11 @@ function displayValues(result) {
         var p2y = n[1].y * height;
         var rectHeight = Math.sqrt((p2y-p1y)*(p2y-p1y));
         var rectWidth = Math.sqrt((p2x-p1x)*(p2x-p1x));
-        totArea += rectHeight * rectWidth * imageScale;
+        totArea += rectHeight * rectWidth / imageScale;
     }
     totCost = totArea * costConv;
     totCarbon = totArea * carbonConv;
-    document.getElementById("totalArea").innerHTML = totArea;
-    document.getElementById("totalCarbon").innerHTML = totCarbon;
-    document.getElementById("totalCost").innerHTML = totCost;
+    document.getElementById("totalArea").innerHTML = roundToNDecimalPlaces(totArea,2) + " meters squared";
+    document.getElementById("totalCarbon").innerHTML = roundToNDecimalPlaces(totCarbon,2) + " tons of carbon";
+    document.getElementById("totalCost").innerHTML = "$" + roundToNDecimalPlaces(totCost,2) + " CDN";
 }
