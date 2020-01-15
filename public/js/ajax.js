@@ -29,15 +29,10 @@ function encodeImageFileAsURL() {
       fileReader.onload = function(fileLoadedEvent) {
         var srcData = fileLoadedEvent.target.result; // <--- data: base64
         var img = new Image;
-        var newImage = document.createElement('img');
+        var imagePreview = document.getElementById('imagePreview');
 
-        newImage.src = srcData;
-        newImage.style.backgroundSize = "300px 300px";
+        imagePreview.src = srcData;
         img.src = fileReader.result;
-
-        var results = document.getElementById("Results");
-        results.parentNode.insertBefore(newImage, document.getElementById("Results"));
-        
 
         const base64 = fileReader.result.split(",").pop();
         debug_alert("Image file uploaded has " + countUtf8Bytes(base64) + " bytes.");
