@@ -7,10 +7,10 @@
     <title>urbanForests | Home</title>
     <meta name="description" content="urbanForests Homepage">
     <meta name="keywords" content="">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900"
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900"
 
       rel="stylesheet" type="text/css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
@@ -92,27 +92,24 @@
             </li>
             <li style="text-align: left;">
               <h3 id="step2">Enter image scale here (i.e. 1m = X pixels):
-                &nbsp;&nbsp; <input id="imageScaleInput" min="0" required="required"
-
-                  value="meters per pixel" name="meters per pixel" type="number">
+                &nbsp;&nbsp; 
+                <input id="imageScaleInput" min="0" required="required" name="meters per pixel" type="number">
                 <button onclick="submitImages()">Submit</button> </h3>
             </li>
-            <li>
+            <li id="Results">
               <div style="text-align: left;">
-                <h3 id="resultsStep">3.) Results: </h3>
+                <h3 id="resultsStep">Results: </h3>
               </div>
-              <div id="Results">
-                <p style="text-align: left;">- Area Identified: </p>
-                <div id="totalArea"></div>
-                <p></p>
-                <p style="text-align: left;">- Estimated Carbon Sequestration
-                  Potential: </p>
-                <div id="totalCarbon"></div>
-                <p></p>
-                <p style="text-align: left;">- Estimated Cost of Conversion: </p>
-                <div id="totalCost"></div>
-                <p></p>
-              </div>
+              <p style="text-align: left;">- Area Identified: </p>
+              <div id="totalArea"></div>
+              <p></p>
+              <p style="text-align: left;">- Estimated Carbon Sequestration
+                Potential: </p>
+              <div id="totalCarbon"></div>
+              <p></p>
+              <p style="text-align: left;">- Estimated Cost of Conversion: </p>
+              <div id="totalCost"></div>
+              <p></p>
             </li>
           </ol>
         </div>

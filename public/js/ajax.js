@@ -4,16 +4,15 @@ var imageScale;
 var imageObject;
 var isImageInput = false;
 
-
 function debug_alert(info) {
     //alert(info);
     console.log(info);
 }
 
 function countUtf8Bytes(s){
-    var b = 0, i = 0, c
+    var b = 0, i = 0, c;
     for(;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
-    return b
+    return b;
 }
 
 function roundToNDecimalPlaces(value, decimalPlaces) {
@@ -24,7 +23,7 @@ function encodeImageFileAsURL() {
     debug_alert("encodeImageFileAsURL has begun");
     var filesSelected = document.getElementById("imageInput").files;
     if (filesSelected.length > 0) {
-      var fileToLoad = filesSelected[0];
+      var fileToLoad = filesSelected[filesSelected.length-1];
       var fileReader = new FileReader();
 
       fileReader.onload = function(fileLoadedEvent) {
@@ -32,8 +31,13 @@ function encodeImageFileAsURL() {
         var img = new Image;
         var newImage = document.createElement('img');
 
-        newImage.src = srcData; 
+        newImage.src = srcData;
+        newImage.style.backgroundSize = "300px 300px";
         img.src = fileReader.result;
+
+        var results = document.getElementById("Results");
+        results.parentNode.insertBefore(newImage, document.getElementById("Results"));
+        
 
         const base64 = fileReader.result.split(",").pop();
         debug_alert("Image file uploaded has " + countUtf8Bytes(base64) + " bytes.");
@@ -65,7 +69,6 @@ function encodeImageFileAsURL() {
         }
     };
     
-    //console.log(base64String);
     xmlhttp.open("POST","./set-data", true);
     xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xmlhttp.setRequestHeader('Content-type', 'text/plain');
@@ -75,7 +78,7 @@ function encodeImageFileAsURL() {
 function submitImages() {
     debug_alert("submitImages has begun");
     if (isImageInput == false) {
-        debug_alert(NO_IMAGE_WARNING_STRING);
+        debug_alert("Image has not been fully uploaded yet");
         return;
     }
     imageScale = document.getElementById("imageScaleInput").value;
@@ -104,6 +107,7 @@ function analyzeImage() {
 
 function displayValues(result) {
     debug_alert("displayValues has begun");
+
     // calculations
     var carbonConv = 5.87;
     var costConv = 111;
@@ -124,6 +128,7 @@ function displayValues(result) {
         var rectWidth = Math.sqrt((p2x-p1x)*(p2x-p1x));
         totArea += rectHeight * rectWidth / imageScale;
     }
+    
     totCost = totArea * costConv;
     totCarbon = totArea * carbonConv;
     document.getElementById("totalArea").innerHTML = roundToNDecimalPlaces(totArea,2) + " meters squared";

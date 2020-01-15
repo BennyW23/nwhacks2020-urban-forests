@@ -1,6 +1,7 @@
 //USELESS IGNNORE THIS 
 // TRYING TO USE GOOGLE VISION NODE JS 
 
+/*
 const {Storage} = require('@google-cloud/storage');
 const automl = require('@google-cloud/automl');
 const fs = require('fs');
@@ -30,9 +31,9 @@ console.log(`2`);
 // Create client for prediction service.
 const client = new automl.PredictionServiceClient();
 
-/**
- * TODO(developer): Uncomment the following line before running the sample.
- */
+
+// TODO(developer): Uncomment the following line before running the sample.
+
 // const projectId = `hip-apricot-264821`;
 // const computeRegion = `region-name, e.g. "us-central1"`;
 const modelId = `IOD6694191827760709632`;
@@ -67,3 +68,5 @@ response.payload.forEach(result => {
 console.log(`Predicted class name: ${result.displayName}`);
 console.log(`Predicted class score: ${result.classification.score}`);
 });
+
+*/
